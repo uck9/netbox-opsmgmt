@@ -2,7 +2,7 @@ from netbox.filtersets import NetBoxModelFilterSet
 from netbox_planner.models.impact import Impact
 
 
-class ImpactilterSet(NetBoxModelFilterSet):
+class ImpactfilterSet(NetBoxModelFilterSet):
     class Meta:
         model = Impact
         fields = ['name', 'impact_Rating' ]

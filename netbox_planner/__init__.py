@@ -5,7 +5,7 @@ from netbox.plugins import PluginConfig
 metadata = metadata('netbox_planner')
 
 __author__ = """Nathan Reeves"""
-__email__ = ""
+__email__ = "nathan.a.reeves@gmail.com"
 __version__ = "0.1.0"
 
 
@@ -40,6 +40,5 @@ class PlannerConfig(PluginConfig):
             related_name='device',
             related_query_name='device'
         ).contribute_to_class(Device, 'impact_assessment')
-
 
 config = PlannerConfig

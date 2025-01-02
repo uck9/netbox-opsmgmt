@@ -25,7 +25,7 @@ class CircuitImpactInfoView(generic.ObjectView):
         content_type = ContentType.objects.get(app_label="circuits", model="circuit")
 
         return {
-            "object": self.child_model.objects.filter(
+            "impact": self.child_model.objects.filter(
                 assigned_object_id=instance.id,
                 assigned_object_type_id=content_type.id
                 ).values()[0],

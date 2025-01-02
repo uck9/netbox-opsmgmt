@@ -16,15 +16,15 @@
         <table class="table table-hover attr-table">
           <tr>
             <th scope="row">Impacts Critical Endpoints</th>
-            <td>{{ object.crit_ep_impacted }}</td>
+            <td>{{ impact.crit_ep_impacted }}</td>
           </tr>
           <tr>
             <th scope="row">Impact Rating</th>
-            <td><span {{ object.impact_rating|impact_rating_badge_class }}>{{ object.impact_rating }}</span></td>
+            <td><span {{ impact.impact_rating|impact_rating_badge_class }}>{{ impact.impact_rating }}</span></td>
           </tr>
           <tr>
             <th scope="row">Last Review Date</th>
-            <td><span {{ object.last_review_date|last_review_date_badge_class }}>{{ object.last_review_date }}</span></td>
+            <td><span {{ impact.last_review_date|last_review_date_badge_class }}>{{ impact.last_review_date }}</span></td>
           </tr>
         </table>
       </div>
@@ -36,8 +36,8 @@
     <div class="card">
       <h5 class="card-header">Business Impact Assessment</h5>
       <div class="card-body">
-        {% if object.bus_impact_assess %}
-          {{ object.bus_impact_assess|markdown }}
+        {% if impact.bus_impact_assess %}
+          {{ impact.bus_impact_assess|markdown }}
         {% else %}
           <span class="text-muted">None</span>
         {% endif %}

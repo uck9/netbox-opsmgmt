@@ -1,5 +1,6 @@
-from django.utils.translation import gettext as _
 import django_tables2 as tables
+
+from django.utils.translation import gettext as _
 from netbox.tables import NetBoxTable, ChoiceFieldColumn, columns
 
 from netbox_planner.models import Impact
