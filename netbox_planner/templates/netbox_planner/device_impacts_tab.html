@@ -1,0 +1,62 @@
+{% extends 'generic/object.html' %}
+{% load planner_filters %}
+
+{% block content %}
+<div class="row">
+  <div class="col col-12 col-xl-6">
+    <div class="card">
+      <h5 class="card-header">Impact Analysis
+        <div class="card-actions">
+            <a href="{% url 'plugins:netbox_planner:impact' impact.id %}" class="btn btn-sm btn-ghost-primary">
+              <i class="mdi mdi-chevron-right-box-outline" aria-hidden="true"></i> Impact Assessment Record
+            </a>
+        </div>
+      </h5>
+      <div class="card-body">
+        <table class="table table-hover attr-table">
+          <tr>
+            <th scope="row">Impacts Critical Endpoints</th>
+            <td>{{ object.crit_ep_impacted }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Impact Rating</th>
+            <td><span {{ object.impact_rating|impact_rating_badge_class }}>{{ object.impact_rating }}</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Last Review Date</th>
+            <td><span {{ object.last_review_date|last_review_date_badge_class }}>{{ object.last_review_date }}</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col col-md-12">
+    <div class="card">
+      <h5 class="card-header">Business Impact Assessment</h5>
+      <div class="card-body">
+        {% if object.bus_impact_assess %}
+          {{ object.bus_impact_assess|markdown }}
+        {% else %}
+          <span class="text-muted">None</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col col-md-12">
+    <div class="card">
+      <h5 class="card-header">Technical Impact Assessment</h5>
+      <div class="card-body">
+        {% if impact.tech_impact_assess %}
+          {{ impact.tech_impact_assess|markdown }}
+        {% else %}
+          <span class="text-muted">None</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

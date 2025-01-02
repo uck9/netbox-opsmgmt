@@ -1,0 +1,70 @@
+
+{% extends 'generic/object.html' %}
+{% load buttons %}
+{% load custom_links %}
+{% load helpers %}
+{% load plugins %}
+{% load planner_filters %}
+{% load render_table from django_tables2 %}
+
+{% block content %}
+<div class="row">
+  <div class="col col-12 col-xl-6">
+    <div class="card">
+      <h5 class="card-header">Impact Analysis</h5>
+      <div class="card-body">
+        <table class="table table-hover attr-table">
+          <tr>
+            <th scope="row">Impacts Critical Endpoints</th>
+            <td>{{ object.crit_ep_impacted }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Impact Rating</th>
+            <td><span {{ object.impact_rating|impact_rating_badge_class }}>{{ object.impact_rating }}</span></td>
+          </tr>
+          <tr>
+            <th scope="row">Last Review Date</th>
+            <td><span {{ object.last_review_date|last_review_date_badge_class }}>{{ object.last_review_date }}</span></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    {% plugin_left_page object %}
+    {% include 'inc/panels/tags.html' %}
+  </div>
+  <div class="col col-12 col-xl-6">
+    {% include 'inc/panels/comments.html' %}
+    {% include 'inc/panels/custom_fields.html' %}
+  </div>
+</div>
+<div class="row">
+  <div class="col col-md-12">
+    <div class="card">
+      <h5 class="card-header">Business Impact Assessment</h5>
+      <div class="card-body">
+        {% if object.bus_impact_assess %}
+          {{ object.bus_impact_assess|markdown }}
+        {% else %}
+          <span class="text-muted">None</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col col-md-12">
+    <div class="card">
+      <h5 class="card-header">Technical Impact Assessment</h5>
+      <div class="card-body">
+        {% if object.tech_impact_assess %}
+          {{ object.tech_impact_assess|markdown }}
+        {% else %}
+          <span class="text-muted">None</span>
+        {% endif %}
+      </div>
+      {% plugin_full_width_page object %}
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
