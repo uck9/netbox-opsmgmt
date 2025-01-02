@@ -1,6 +1,6 @@
-from netbox.plugins import PluginMenuButton, PluginMenuItem
+from netbox.plugins import PluginMenu, PluginMenuButton, PluginMenuItem
 
-plugin_buttons = [
+impact_buttons = [
     PluginMenuButton(
         link="plugins:netbox_planner:impact_add",
         title="Add",
@@ -8,10 +8,18 @@ plugin_buttons = [
     )
 ]
 
-menu_items = (
+impact_items = (
     PluginMenuItem(
         link="plugins:netbox_planner:impact_list",
-        link_text="Impacts",
-        buttons=plugin_buttons,
+        link_text="Impact Analyses",
+        buttons=impact_buttons,
     ),
+)
+
+menu = PluginMenu(
+    label=f'Operations Planning',
+    groups=(
+        ('Impacts', impact_items),
+    ),
+    icon_class='mdi mdi-wrench-outline'
 )
