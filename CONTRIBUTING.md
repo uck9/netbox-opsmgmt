@@ -23,7 +23,7 @@ We love your input! We want to make contributing to this project as easy and tra
 
 ### Report Bugs
 
-Report bugs at https://github.com/uck9/netbox-pmm/issues.
+Report bugs at https://github.com/uck9/netbox-opsmgmt/issues.
 
 If you are reporting a bug, please include:
 

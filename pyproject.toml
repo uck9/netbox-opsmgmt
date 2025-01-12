@@ -6,12 +6,12 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name =  "netbox-planner"
+name =  "netbox-opsmgmt"
 version = "0.1.0"
 authors = [
     {name = "Nathan Reeves", email = "nathan.a.reeves@gmail.com"},
 ]
-description = "NetBox Planner Plugin"
+description = "NetBox Operations Managment Plugin"
 readme = "README.md"
 
 classifiers=[
@@ -37,9 +37,9 @@ test = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/uck9/netbox-pmm/blob/main/README.md"
-Source = "https://github.com/uck9/netbox-planner"
-Tracker = "https://github.com/uck9/netbox-planner/issues"
+Documentation = "https://github.com/uck9/netbox-opsmgmt/blob/main/README.md"
+Source = "https://github.com/uck9/netbox-opsmgmt"
+Tracker = "https://github.com/uck9/netbox-opsmgmt/issues"
 
 [tool.black]
 line-length = 120
