@@ -22,7 +22,7 @@ class Impact(PrimaryModel):
     assigned_object_type = models.ForeignKey(
         to=ContentType,
         limit_choices_to=IMPACT_ASSIGNMENT_MODELS,
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name='+',
         blank=True,
         null=True
