@@ -9,7 +9,7 @@ __email__ = "nathan.a.reeves@gmail.com"
 __version__ = "0.1.0"
 
 
-class PlannerConfig(PluginConfig):
+class OpsMgmtConfig(PluginConfig):
     name = "netbox_opsmgmt"
     verbose_name = "NetBox Operations Management Plugin"
     description = "NetBox Operations Managmeent Plugin"
@@ -41,4 +41,4 @@ class PlannerConfig(PluginConfig):
             related_query_name='device'
         ).contribute_to_class(Device, 'impact_assessment')
 
-config = PlannerConfig
+config = OpsMgmtConfig
